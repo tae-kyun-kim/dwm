@@ -1,0 +1,2 @@
+#define BOARD_DW1001_DEV 
+#define NRF52832_XXAA

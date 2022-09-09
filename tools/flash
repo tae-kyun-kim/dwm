@@ -1,0 +1,10 @@
+#!/bin/bash
+
+docker run --rm -it --privileged \
+    -v $(pwd)/src:/src \
+    -v $(pwd)/build:/build \
+    -v /dev/ttyACM0:/dev/ttyACM0 \
+    inrol-dwm1001-firmware-builder:0.0.1 \
+    bash -c "./nrfjprog/bin/nrfjprog --eraseall -f nrf52 && \
+    ./nrfjprog/bin/nrfjprog --program build/dwm1001-app.hex -f nrf52 --verify --log && \
+    ./nrfjprog/bin/nrfjprog --reset -f nrf52"

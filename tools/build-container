@@ -1,0 +1,2 @@
+#!/bin/bash
+docker build -t inrol-dwm1001-firmware-builder:0.0.1 -f Dockerfile .

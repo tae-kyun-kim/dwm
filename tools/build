@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker run --rm -it\
+    -v $(pwd)/src:/src \
+    -v $(pwd)/build:/build \
+    inrol-dwm1001-firmware-builder:0.0.1 \
+    bash -c "cd /build && cmake /src -DCMAKE_TOOLCHAIN_FILE=/src/cmake/arm-gcc-toolchain.cmake && make"
